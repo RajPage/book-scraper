@@ -2,9 +2,9 @@ export type Book = {
   title: string;
   titleAlias?: string;
   year: string;
-  place: string;
+  places: Array<string>;
   author: string;
   authorAlias?: string;
   genre: string; // TODO: change to enum
-  subgenre: string;
+  subgenre?: string;
 };

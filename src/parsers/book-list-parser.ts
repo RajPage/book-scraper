@@ -22,7 +22,7 @@ export const BookListParser = () => {
       console.error("Failed to match:", cleanedText);
       return;
     }
-    const [, titleYear, place, author, fullGenre] = match;
+    const [, titleYear, places, author, fullGenre] = match;
     const [title, titleAlias, year] = getTitleYear(titleYear);
     const [genre, subgenre] = getGenre(fullGenre);
 
@@ -32,7 +32,7 @@ export const BookListParser = () => {
       year,
       genre,
       subgenre,
-      place,
+      places: places.split('/'),
       author,
     };
   };

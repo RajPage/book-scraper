@@ -1,5 +1,6 @@
 import { chromium } from "@playwright/test";
 import { BookListParser } from "./parsers/book-list-parser";
+import { analyzeBooks } from "./analysis";
 
 const scrape = async () => {
   const browser = await chromium.launch();
@@ -15,6 +16,9 @@ const scrape = async () => {
   const books = parseBookEntries(bookEntries);
   console.log("Books scraped:", books.length);
   // Around 50 books were not scraped by the regex.
+  // Many still require manual cleanup
+  const {placesSet, genreMap} = analyzeBooks(books)
+  console.log(placesSet)
 };
 
 const main = async () => {
