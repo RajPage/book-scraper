@@ -54,10 +54,7 @@ export const BookListParser = () => {
 
   const getGenre = (fullGenre: string): [string, string] => {
     let subgenre = "";
-    const genreFragments = fullGenre
-      .replace("[", "")
-      .replace("]", "")
-      .split(": "); // TODO: combine the replaces
+    const genreFragments = fullGenre.replace(/[\[\]]/g, "").split(": ");
     if (genreFragments.length > 1) subgenre = genreFragments[1];
     const genre = genreFragments[0];
     return [genre, subgenre];
