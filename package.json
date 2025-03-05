@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/scrape.ts",
   "scripts": {
-    "start": "ts-node src/scrape.ts",
+    "start": "ts-node src/main.ts",
     "build": "tsc"
   },
   "keywords": [],
